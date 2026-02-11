@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Raleway:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 213 21% 24%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 213 21% 24%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 213 21% 24%;
+
+    --primary: 52 84% 55%;
+    --primary-foreground: 213 21% 15%;
+
+    --secondary: 213 21% 24%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 20% 94%;
+    --muted-foreground: 213 10% 50%;
+
+    --accent: 52 84% 55%;
+    --accent-foreground: 213 21% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 210 15% 88%;
+    --input: 210 15% 88%;
+    --ring: 52 84% 55%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 213 21% 24%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 52 84% 55%;
+    --sidebar-primary-foreground: 213 21% 15%;
+    --sidebar-accent: 213 21% 30%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 213 21% 30%;
+    --sidebar-ring: 52 84% 55%;
+
+    --hero-gradient: linear-gradient(135deg, hsl(213 21% 24%) 0%, hsl(213 25% 18%) 100%);
+    --primary-glow: 52 90% 65%;
+    --shadow-primary: 0 8px 30px -8px hsl(52 84% 55% / 0.4);
+    --shadow-card: 0 4px 20px -4px hsl(213 21% 24% / 0.1);
+  }
+
+  .dark {
+    --background: 213 25% 10%;
+    --foreground: 0 0% 95%;
+    --card: 213 25% 14%;
+    --card-foreground: 0 0% 95%;
+    --popover: 213 25% 14%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 52 84% 55%;
+    --primary-foreground: 213 21% 15%;
+    --secondary: 213 21% 20%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 213 21% 18%;
+    --muted-foreground: 210 10% 60%;
+    --accent: 52 84% 55%;
+    --accent-foreground: 213 21% 15%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 213 21% 20%;
+    --input: 213 21% 20%;
+    --ring: 52 84% 55%;
+    --sidebar-background: 213 25% 10%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 52 84% 55%;
+    --sidebar-primary-foreground: 213 21% 15%;
+    --sidebar-accent: 213 21% 18%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 213 21% 18%;
+    --sidebar-ring: 52 84% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer components {
+  .hover-scale {
+    @apply transition-transform duration-200 hover:scale-105;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-primary-foreground font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:shadow-[var(--shadow-primary)] hover:brightness-110;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:brightness-125;
+  }
+
+  .section-padding {
+    @apply px-4 md:px-8 lg:px-16 py-16 md:py-24;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-[hsl(var(--primary-glow))];
+  }
+
+  .card-elevated {
+    @apply bg-card rounded-xl shadow-[var(--shadow-card)] border border-border/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+}
+
+/* Logo carousel infinite scroll */
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-scroll-left {
+  animation: scroll-left 30s linear infinite;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Pulse glow */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 5px hsl(52 84% 55% / 0.3); }
+  50% { box-shadow: 0 0 20px hsl(52 84% 55% / 0.6); }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Typing animation */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* Slide in from bottom */
+@keyframes slide-up {
+  0% { transform: translateY(30px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.6s ease-out forwards;
+}
+
+/* Rotate animation */
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+/* Shimmer animation */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+}
