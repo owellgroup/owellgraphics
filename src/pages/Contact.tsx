@@ -84,7 +84,7 @@ const Contact = () => {
             <div className="card-elevated p-6">
               <Phone className="w-8 h-8 text-primary mb-3" />
               <h3 className="font-heading font-bold mb-1">Phone</h3>
-              <a href="tel:0812320168" className="text-sm text-muted-foreground hover:text-primary transition-colors">081 232 0168</a>
+              <a href="tel:0812320168" className="text-sm text-muted-foreground hover:text-primary transition-colors">+264 81 232 0168</a>
             </div>
             <div className="card-elevated p-6">
               <MapPin className="w-8 h-8 text-primary mb-3" />
