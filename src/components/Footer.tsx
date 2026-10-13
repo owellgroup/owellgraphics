@@ -40,7 +40,7 @@ const Footer = () => {
                 <Mail className="w-4 h-4 text-primary" /> info@owellgraphics.com
               </a>
               <a href="tel:0812320168" className="flex items-center gap-2 hover:text-primary transition-colors">
-                <Phone className="w-4 h-4 text-primary" /> 081 232 0168
+                <Phone className="w-4 h-4 text-primary" /> +264 81 232 0168
               </a>
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-primary" /> Windhoek, Namibia
