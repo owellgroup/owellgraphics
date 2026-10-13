@@ -11,7 +11,7 @@ const TopNav = () => {
           </a>
           <a href="tel:0812320168" className="flex items-center gap-1.5 hover:text-primary transition-colors">
             <Phone className="w-3.5 h-3.5 text-primary" />
-            <span>081 232 0168</span>
+            <span>+264 81 232 0168</span>
           </a>
         </div>
         <div className="flex items-center gap-1.5">
